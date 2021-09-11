@@ -2,8 +2,14 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const Navbar = (props) => {
+    let myStyle = {
+        backgroundColor: '#adb5bd'
+    }
+
+
     return (
-        <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
+        // <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
+        <nav className={`navbar navbar-expand-lg navbar-${props.mode}`} style={props.mode === 'light' ? { backgroundColor: '#adb5bd' } : { backgroundColor: '#003d5b' }}>
             <div className="container-fluid">
                 <Link className="navbar-brand" to="/">{props.title}</Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,7 +34,7 @@ const Navbar = (props) => {
                     </div>
                 </div>
             </div>
-        </nav>
+        </nav >
     )
 }
 
