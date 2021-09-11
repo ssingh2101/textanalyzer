@@ -8,6 +8,7 @@ import {
     Route,
     Switch
 } from "react-router-dom";
+import './App.css'
 
 
 
@@ -30,11 +31,9 @@ const App = () => {
         if (mode === 'light') {
             setMode('dark')
             document.body.style.backgroundColor = '#03203C'
-            showAlert("Dark Mode has been enabled", "success")
         } else {
             setMode('light')
-            document.body.style.backgroundColor = 'white'
-            showAlert("Light Mode has been enabled", "success")
+            document.body.style.backgroundColor = '#ced4da'
         }
     }
 
@@ -50,7 +49,7 @@ const App = () => {
                 </Route>
 
                 <Route exact path="/about">
-                    <About />
+                    <About mode={mode} />
                 </Route>
             </Switch>
         </Router>
