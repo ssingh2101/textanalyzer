@@ -1,5 +1,8 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { FaMoon } from 'react-icons/fa';
+// import { FiSun } from 'react-icons/fi';
+import { ImSun } from 'react-icons/im';
 
 const Navbar = (props) => {
 
@@ -14,19 +17,15 @@ const Navbar = (props) => {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <Link className="nav-link active" aria-current="page" to="/">{props.tab1}</Link>
+                            <Link className="nav-link mx-2" aria-current="page" to="/">{props.tab1}</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/about">{props.tab2}</Link>
+                            <Link className="nav-link mx-2" to="/about">{props.tab2}</Link>
                         </li>
                     </ul>
-                    {/* <form className="d-flex">
-                        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                        <button className="btn btn-outline-primary" type="submit">Search</button>
-                    </form> */}
 
-                    <div className="form-check form-switch mx-1">
-                        <input onClick={props.toggle} className="form-check-input" type="checkbox" id="flexSwitchCheckDefault" />
+                    <div className="themetoggler">
+                        {props.mode === 'light' ? <i style={{ heigh: '20px' }} onClick={props.toggle} type="checkbox"><FaMoon size={25} /></i> : <i onClick={props.toggle} type="checkbox"><ImSun size={25} style={{ color: 'white' }} /></i>}
                     </div>
                 </div>
             </div>

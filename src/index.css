@@ -1,0 +1,13 @@
+.accordion-button::after {
+	filter: invert(1);
+}
+
+.themetoggler {
+	margin-right: 2em;
+}
+
+@media only screen and (max-width: 1024px) {
+	.themetoggler {
+		margin-left: 0.5em;
+	}
+}
