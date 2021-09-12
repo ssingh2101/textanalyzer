@@ -25,12 +25,12 @@ const Navbar = (props) => {
                         <button className="btn btn-outline-primary" type="submit">Search</button>
                     </form> */}
 
-                    <div className="form-check form-switch mx-5">
+                    <div className="form-check form-switch mx-1">
                         <input onClick={props.toggle} className="form-check-input" type="checkbox" id="flexSwitchCheckDefault" />
                     </div>
                 </div>
             </div>
-        </nav >
+        </nav>
     )
 }
 
