@@ -9,6 +9,9 @@ import {
     Switch
 } from "react-router-dom";
 import './App.css'
+import Modal from "./components/Modal";
+
+
 
 
 
@@ -16,6 +19,15 @@ import './App.css'
 const App = () => {
     const [mode, setMode] = useState('light')
     const [alert, setAlert] = useState(null)
+    const [modal, setModal] = useState(null)
+
+    const setShowModal = (showModal, content) => {
+        setModal({
+            isOpen: showModal,
+            contentLabel: '',
+            data: content
+        })
+    }
 
     const showAlert = (message, type) => {
         setAlert({
@@ -43,9 +55,10 @@ const App = () => {
         <Router>
             <Navbar title="Analyze Your Text" tab1="Home" tab2="About" mode={mode} toggle={toggle} />
             <Alert alert={alert} />
+            <Modal modal={modal} setShowModal={setShowModal} />
             <Switch>
                 <Route exact path="/">
-                    <TextForm showAlert={showAlert} heading="Enter your text to analyze" mode={mode} />
+                    <TextForm showAlert={showAlert} setShowModal={setShowModal} heading="Enter your text to analyze" mode={mode} />
                 </Route>
 
                 <Route exact path="/about">
